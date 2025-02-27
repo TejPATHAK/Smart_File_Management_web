@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule File Task</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="navbar">
+        <a href="{{ url_for('dashboard') }}"class="back-to-dashboard">Back to Dashboard</a>
+        <a href="{{ url_for('dashboard') }}"class="scheduledd">Schedule Your all Files Here!</a>
+    
+    </div>
+    <div class="container">
+        <h2>Schedule File </h2>
+
+        <form action="{{ url_for('schedule') }}" method="POST">
+            <label for="directory">Enter Directory Path:</label>
+            <input type="text" id="directory" name="directory" required>
+        
+            <label for="interval">Run every (minutes):</label>
+            <input type="number" id="interval" name="interval" min="1" value="1" required>
+        
+            <button type="submit">Schedule Organization</button>
+        </form>
+
+        {% if message %}
+            <p>{{ message }}</p>
+        {% endif %}
+
+        
+    </div>
+</body>
+</html>

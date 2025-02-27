@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search File/Directory</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="navbar">
+        <a href="{{ url_for('dashboard') }}"class="back-to-dashboard">Back to Dashboard</a>
+        <a href="{{ url_for('dashboard') }}"class="ss">Search Your Files Here!</a>
+    
+    </div>
+</div>
+    <div class="container">
+        <h2>Search File/Directory</h2>
+
+        <form action="{{ url_for('search') }}" method="POST">
+            <label for="directory">Enter Directory Path:</label>
+            <input type="text" id="directory" name="directory" required>
+
+            <label for="search_term">Enter File/Folder Name:</label>
+            <input type="text" id="search_term" name="search_term" required>
+
+            <button type="submit">Search</button>
+        </form>
+
+        {% if search_results is not none %}
+            <h3>Search Results:</h3>
+            {% if search_results %}
+                <ul>
+                    {% for result in search_results %}
+                        <li>{{ result }}</li>
+                    {% endfor %}
+                </ul>
+            {% else %}
+                <p>No matching files or directories found.</p>
+            {% endif %}
+        {% endif %}
+    </div>
+</body>
+</html>

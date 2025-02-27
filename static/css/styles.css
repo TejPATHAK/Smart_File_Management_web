@@ -1,0 +1,1070 @@
+/* ===========================
+   General Page Styling
+   =========================== */
+/* Apply background image to the entire page */
+body {
+    font-family: Arial, sans-serif;
+    background: url("../images/login-bg2.jpg") no-repeat center center;
+
+    background-size: cover; /* Ensures the image covers the whole screen */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+/* User Icon Styling */
+.user-icon {
+    text-align: center;
+    margin-bottom: 15px; /* Space below the icon */
+}
+
+/* User Icon Styling (Smaller size, no box) */
+.user-icon {
+    width: 50px; /* Adjust to desired size */
+    height: 50px;
+    display: block;
+    margin: 0 auto 10px; /* Center the icon and add space below */
+    border-radius: 50%; /* Circular shape */
+}
+
+
+/* Style the login container */
+.login-container {
+    background: rgba(255, 255, 255, 0.85); /* Semi-transparent background */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 350px; /* Adjust width */
+}
+
+
+
+
+/* Add a semi-transparent overlay for better readability */
+.login-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.85); /* Light overlay */
+    border-radius: 10px;
+}
+
+/* Ensuring all content stays above the overlay */
+.login-container * {
+    position: relative;
+    z-index: 1;
+}
+
+/* ===========================
+   Heading and Icon Styling
+   =========================== */
+h2 {
+    color: black;
+    font-size: 28px; /* Enlarged font size */
+    margin-bottom: 20px;
+}
+
+.highlight {
+    color: orange;
+}
+
+.icon {
+    text-align: center;
+    font-size: 70px; /* Increased size */
+    color: white;
+    margin-bottom: 20px;
+}
+
+/* ===========================
+   Input Field Styling
+   =========================== */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Add spacing between inputs */
+    width: 100%;
+}
+
+/* Input field container for consistency */
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    border-bottom: 2px solid #ccc; /* Light grey bottom border */
+    padding: 8px;
+}
+
+/* Input field customization */
+.input-wrapper input {
+    border: black; /* Remove default border */
+    outline: none; /* Remove focus outline */
+    background: transparent; /* Clean background */
+    padding: 12px; /* Adjust padding for consistency */
+    font-size: 16px;
+    width: 100%; /* Full width */
+    color: #333; /* Text color */
+    box-sizing: border-box; /* Ensure width calculation includes padding */
+}
+
+/* Remove border on focus */
+.input-wrapper input:focus {
+    border: none;
+    outline: none;
+}
+
+/* ===========================
+   Remember Me Checkbox
+   =========================== */
+.remember-me {
+    display: flex;
+    align-items: center;
+    font-size: 16px; /* Bigger text */
+    margin-top: 20px;
+}
+
+/* ===========================
+   Login Button Styling
+   =========================== */
+.login-btn {
+    background: #ff8c00;
+    color: whitesmoke;
+    border: none;
+    padding: 15px; /* Increased padding */
+    border-radius: 8px;
+    width: 100%;
+    cursor: pointer;
+    font-size: 20px; /* Larger text */
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+/* Hover effect */
+.login-btn:hover {
+    background-color: #e07b00;
+}
+
+/* ===========================
+   Extra Links (Forgot Password, Sign Up)
+   =========================== */
+.extra-links {
+    margin-top: 20px;
+    font-size: 17px;
+
+    /* Style for Remember Me text */
+.remember-me label {
+    color: blue; /* Change text color to blue */
+    font-weight: bold; /* Optional: Make it bold */
+}
+
+/* Style for Forgot Password & Sign Up links */
+.extra-links a {
+    color: blue; /* Change link color to blue */
+    font-weight: bold; /* Optional: Make it bold */
+    text-decoration: none; /* Optional: Remove underline */
+}
+
+/* Optional: Change color on hover */
+.extra-links a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+    
+}
+
+/* ===========================
+   Responsive Design for Smaller Screens
+   =========================== */
+@media (max-width: 500px) {
+    .login-container {
+        width: 90%; /* Adjust width for smaller screens */
+        padding: 25px;
+    }
+
+    .input-wrapper {
+        width: 90%;
+        padding: 25px;
+    }
+
+    .login-btn {
+        font-size: 18px;
+        padding: 12px;
+    }
+}
+
+
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, white, #f4eeee, rgb(221, 212, 212));
+    height: 100vh;
+    margin: 0;
+    display: flex;
+}
+
+
+
+/* Navigation Bar */
+.navbar {
+    background: #ff8c00;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar h1 {
+    margin-left: 16px;
+    font-size: 20px;
+    .nav-title {
+        font-size: 120px;
+        font-weight: bold;
+        display: block;
+    }
+    
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px; /* Adjust spacing between links */
+    position: relative;
+    right: 30px; /* Moves the entire section slightly to the left */
+}
+
+.nav-links a {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Adjust the gap as needed */
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    font-size: 20px;
+}
+
+
+.nav-links a i {
+    margin-right: 15px;
+}
+
+/* Language Dropdown Styling */
+.language-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Button Styling */
+.lang-btn {
+    background-color: #ff8c00; /* Orange Theme */
+    color: white;
+    font-size: 18px; /* Bigger font */
+    padding: 12px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    row-gap: 10px;
+}
+
+/* Dropdown Content */
+.dropdown-content {
+    display: none; /* Initially hidden */
+    position: absolute;
+    background: white;
+    min-width: 150px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 100;
+    border-radius: 5px;
+}
+
+/* Dropdown Items */
+.dropdown-content a {
+    color: black;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+}
+
+/* Hover Effect */
+.dropdown-content a:hover {
+    background: #f1f1f1;
+}
+
+/* Show Dropdown on Hover */
+.language-dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Sidebar */
+.sidebar {
+    background: black;
+    color: white;
+    width: 250px;
+    height: 100vh;
+    padding-top: 60px;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    padding: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.sidebar ul li a {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* Adjust spacing between icon and text */
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+}
+
+.sidebar ul li a i {
+    margin-right: 5px;
+}
+
+/* Main Content */
+.main-content {
+    margin-left: 290px;
+    padding: 80px 20px;
+    flex-grow: 1;
+}
+
+.dashboard-header {
+    color: #ff8c00;
+    font-size: 27px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Cards Grid */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Ensures exactly 4 columns */
+    gap: 10px; /* Uniform spacing */
+    
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+    max-width: 1400px; /* Prevents stretching */
+    margin: 0 auto; /* Centers the grid */
+    gap: 10px;
+}
+
+.grid-item {
+    background: #ff8c00;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 8px;
+    font-size: 23px;
+    font-weight: bold;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px; /* Ensures equal height */
+    width: 90%; /* Makes all boxes equal */
+    transition: 0.3s ease-in-out;
+    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2); /* Adds depth */
+}
+
+.grid-item:hover {
+    background: #e07b00;
+    transform: translateY(-4px);
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(1, 1fr); /* 1 column for mobile */
+    }
+}
+
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(1, 1fr); /* 1 column for mobile */
+    }
+}
+
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .grid-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns for medium screens */
+    }
+}
+
+@media (max-width: 768px) {
+    .grid-container {
+        grid-template-columns: repeat(1, 1fr); /* 1 column for mobile */
+    }
+}
+
+
+/* Enlarged Search Bar */
+.search-bar {
+    display: flex;
+    align-items: center;
+    background: white;
+    padding: 8px; /* Increased padding */
+    border-radius: 40px;
+}
+
+.search-bar input {
+    border: black;
+    outline: black;
+    padding: 8px 15px; /* Increased padding for better visibility */
+    font-size: 18px; /* Increased font size */
+    width: 140px; /* Increased width */
+    border-radius: 25px;
+}
+
+.search-bar button {
+    border: black;
+    background: none;
+    cursor: pointer;
+    padding: 5px;
+    font-size: 20px; /* Increased button icon size */
+    color: #ff8c00;
+}
+
+/* General styles */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #ffffff; /* white background */
+    color: #000000; /* black text */
+}
+
+/* Navbar styling with flex layout */
+
+/* Navigation Bar */
+.navbar {
+    background: black;
+    color: orange;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar h1 {
+    margin-left: 16px;
+    font-size: 20px;
+    .nav-title {
+        font-size: 120px;
+        font-weight: bold;
+        display: block;
+    }
+    
+}
+
+.nav-left a:hover, .nav-right h2:hover {
+    text-decoration: underline;
+}
+
+/* Container styling for the list_files page */
+.container {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: #ffffff; /* white container */
+    border: 1px solid #ccc; /* subtle gray border for a professional look */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Welcome section styling */
+.welcome {
+    text-align: center;
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #ff6600;
+}
+
+/* Form styling with increased size */
+form {
+    max-width: 700px;
+    margin: 20px auto 20px auto;
+}
+
+form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #000;
+}
+
+form input[type="text"] {
+    width: 100%;
+    padding: 18px;
+    font-size: 1.3em;
+    margin-bottom: 15px;
+    border-radius: 15px;
+    box-sizing: border-box;
+}
+
+form button {
+    width: 100%;
+    padding: 18px 30px;
+    font-size: 1.3em;
+    background-color: #ff6600; /* orange background */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #e65c00; /* darker orange on hover */
+}
+
+/* Files list styling */
+.container ul {
+    list-style: none;
+    padding: 0;
+}
+
+.container ul li {
+    padding: 10px 12px;
+    border-bottom: 1px solid #ccc;
+}
+
+.container ul li:last-child {
+    border-bottom: none;
+}
+
+/* Back link styling */
+.container a {
+    display: inline-block;
+    margin-top: 20px;
+    text-decoration: none;
+    color: #ff6600;
+    font-weight: bold;
+}
+
+.container a:hover {
+    text-decoration: underline;
+}
+
+.back-to-dashboard {
+    color: orange !important;  /* Orange text color */
+    font-size: 32px !important; /* Bigger font size */
+    font-weight: bold !important; /* Bold text */
+    text-decoration: none !important; /* Remove underline */
+    padding: 10px 15px; /* Add some padding */
+    display: inline-block; /* Keep it inline */
+}
+
+/* Optional: Add hover effect */
+.back-to-dashboard:hover {
+    text-decoration: underline !important; /* Underline on hover */
+}
+
+.listt {
+    color: orange !important;/* Change text color to orange */
+    font-size: 32px; /* Increase font size */
+    font-weight: bold; /* Make it bold */
+    margin-left: 55px;/*djust spacing from left */
+}
+.back-to-dashboard {
+    color: orange !important;  /* Orange text color */
+    font-size: 32px !important; /* Bigger font size */
+    font-weight: bold !important; /* Bold text */
+    text-decoration: none !important; /* Remove underline */
+    padding: 10px 15px; /* Add some padding */
+    display: inline-block; /* Keep it inline */
+}
+
+/* Optional: Add hover effect */
+
+.renameee {
+    color: orange !important;/* Change text color to orange */
+    font-size: 32px; /* Increase font size */
+    font-weight: bold; /* Make it bold */
+    margin-left: 45px;/*djust spacing from left */
+}
+
+
+
+.back-to-dashboard {
+    color: orange !important;  /* Orange text color */
+    font-size: 32px !important; /* Bigger font size */
+    font-weight: bold !important; /* Bold text */
+    text-decoration: none !important; /* Remove underline */
+    padding: 10px 15px; /* Add some padding */
+    display: inline-block; /* Keep it inline */
+}
+
+/* Optional: Add hover effect */
+
+.deletee {
+    color: orange !important;/* Change text color to orange */
+    font-size: 32px; /* Increase font size */
+    font-weight: bold; /* Make it bold */
+    margin-left: 45px;/*djust spacing from left */
+}
+
+
+.back-to-dashboard {
+    color: orange !important;  /* Orange text color */
+    font-size: 32px !important; /* Bigger font size */
+    font-weight: bold !important; /* Bold text */
+    text-decoration: none !important; /* Remove underline */
+    padding: 10px 15px; /* Add some padding */
+    display: inline-block; /* Keep it inline */
+}
+
+
+/* Optional: Add hover effect */
+
+.createee {
+    color: orange !important;/* Change text color to orange */
+    font-size: 32px; /* Increase font size */
+    font-weight: bold; /* Make it bold */
+    margin-left: 45px;/*djust spacing from left */
+}
+
+.back-to-dashboard {
+    color: orange !important;  /* Orange text color */
+    font-size: 32px !important; /* Bigger font size */
+    font-weight: bold !important; /* Bold text */
+    text-decoration: none !important; /* Remove underline */
+    padding: 10px 15px; /* Add some padding */
+    display: inline-block; /* Keep it inline */
+}
+
+/* General Page Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    text-align: center;
+    margin: 0;
+}
+
+/* Navbar Styling */
+.navbar {
+    background-color: black;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar a {
+    color: orange;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+/* Form Container */
+.container {
+    width: 100%; /* Adjust as needed */
+    max-width: 600px; /* Prevent it from being too wide */
+    margin: 50px auto; /* Center the form */
+    padding: 30px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Input Group to Keep Inputs Aligned */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Space between inputs */
+}
+
+/* Labels */
+label {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Input Fields */
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Button */
+.btn {
+    background-color: orange;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.btn:hover {
+    background-color: darkorange;
+}
+/* Optional: Add hover effect */
+
+.uploadd {
+    color: orange !important;/* Change text color to orange */
+    font-size: 32px; /* Increase font size */
+    font-weight: bold; /* Make it bold */
+    margin-left: 45px;/*djust spacing from left */
+}
+
+/* General Page Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    text-align: center;
+    margin: 0;
+}
+
+/* Navbar Styling */
+.navbar {
+    background-color: black;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar a {
+    color: orange;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 10px;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+/* Center the Form & Adjust Size */
+/* Form Container */
+.container {
+    width: 50%; /* Adjust as needed */
+    max-width: 400px; /* Prevent it from being too wide */
+    margin: 50px auto; /* Center the form */
+    padding: 30px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Increase Heading Size */
+h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Input Field Styling */
+label {
+    font-size: 22px;
+    font-weight: bold;
+    display: block;
+    text-align: left;
+    margin: 10px 0 5px;
+}
+
+input[type="file"] {
+    font-size: 20px;
+    padding: 10px;
+    width: 100%; /* Make input fields full width */
+    margin: 70px 0;
+}
+
+/* Button Styling */
+button {
+    background-color: orange;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%; /* Make button full width */
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: darkorange;
+}
+
+/* Message Styling */
+p {
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+}
+
+
+.ss {
+    color: orange !important;/* Change text color to orange */
+    font-size: 32px; /* Increase font size */
+    font-weight: bold; /* Make it bold */
+    margin-left: 45px;/*djust spacing from left */
+}
+
+.back-to-dashboard {
+    color: orange !important;  /* Orange text color */
+    font-size: 32px !important; /* Bigger font size */
+    font-weight: bold !important; /* Bold text */
+    text-decoration: none !important; /* Remove underline */
+    padding: 10px 15px; /* Add some padding */
+    display: inline-block; /* Keep it inline */
+}
+
+.encryptt {
+    color: orange !important;/* Change text color to orange */
+    font-size: 32px; /* Increase font size */
+    font-weight: bold; /* Make it bold */
+    margin-left: 45px;/*djust spacing from left */
+}
+
+.back-to-dashboard {
+    color: orange !important;  /* Orange text color */
+    font-size: 32px !important; /* Bigger font size */
+    font-weight: bold !important; /* Bold text */
+    text-decoration: none !important; /* Remove underline */
+    padding: 10px 15px; /* Add some padding */
+    display: inline-block; /* Keep it inline */
+}
+
+.dec {
+    color: orange !important;/* Change text color to orange */
+    font-size: 32px; /* Increase font size */
+    font-weight: bold; /* Make it bold */
+    margin-left: 45px;/*djust spacing from left */
+}
+
+.back-to-dashboard {
+    color: orange !important;  /* Orange text color */
+    font-size: 32px !important; /* Bigger font size */
+    font-weight: bold !important; /* Bold text */
+    text-decoration: none !important; /* Remove underline */
+    padding: 10px 15px; /* Add some padding */
+    display: inline-block; /* Keep it inline */
+}
+
+
+.scheduledd {
+    color: orange !important;/* Change text color to orange */
+    font-size: 32px; /* Increase font size */
+    font-weight: bold; /* Make it bold */
+    margin-left: 45px;/*djust spacing from left */
+}
+
+.back-to-dashboard {
+    color: orange !important;  /* Orange text color */
+    font-size: 32px !important; /* Bigger font size */
+    font-weight: bold !important; /* Bold text */
+    text-decoration: none !important; /* Remove underline */
+    padding: 10px 15px; /* Add some padding */
+    display: inline-block; /* Keep it inline */
+}
+
+.versionn {
+    color: orange !important;/* Change text color to orange */
+    font-size: 32px; /* Increase font size */
+    font-weight: bold; /* Make it bold */
+    margin-left: 45px;/*djust spacing from left */
+}
+
+.back-to-dashboard {
+    color: orange !important;  /* Orange text color */
+    font-size: 32px !important; /* Bigger font size */
+    font-weight: bold !important; /* Bold text */
+    text-decoration: none !important; /* Remove underline */
+    padding: 10px 15px; /* Add some padding */
+    display: inline-block; /* Keep it inline */
+}
+/* Message Styling */
+p {
+    font-size: 22px;
+    font-weight: bold;
+    color: blue;
+}
+
+.aii {
+    color: orange !important;/* Change text color to orange */
+    font-size: 40px; /* Increase font size */
+    font-weight: bold; /* Make it bold */
+    margin-left: 45px;/*djust spacing from left */
+}
+
+.back-to-dashboard {
+    color: orange !important;  /* Orange text color */
+    font-size: 32px !important; /* Bigger font size */
+    font-weight: bold !important; /* Bold text */
+    
+    text-decoration: none !important; /* Remove underline */
+    padding: 10px 15px; /* Add some padding */
+    display: inline-block; /* Keep it inline */
+}
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to right, #f8f9fa, #e3e6e8);
+}
+
+/* Navbar */
+.navbar {
+    background-color: black;
+    padding: 15px;
+    text-align: center;
+}
+
+.navbar a {
+    color: orange;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 0 15px;
+}
+
+.navbar a:hover {
+    color: white;
+}
+
+/* Container */
+.container {
+    width: 90%; /* Makes it wider */
+    max-width: 1200px; /* Set a maximum width */
+    margin: 50px auto; /* Increased top margin to move it down */
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Adds a shadow effect */
+}
+body {
+    padding-top: 200px; /* Moves everything down */
+}
+/* Headings */
+h2, h3 {
+    color: #333;
+}
+
+/* Forms */
+
+
+/* Increase Form Width */
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #f5f5f5;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    width: 130%;  /* Increased width */
+    max-width: 800px;  /* Set a max width */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+label {
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+
+/* Input Fields */
+input[type="text"], input[type="file"] {
+    width: 95%; /* Increase input field width */
+    padding: 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+/* Buttons */
+button {
+    width: 70%; /* Increase button width */
+    padding: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: orange;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+button:hover {
+    background-color: darkorange;
+}
+
+/* Back Button */
+.button {
+    display: inline-block;
+    padding: 10px 15px;
+    background: orange;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.button:hover {
+    background: darkorange;
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/js/all.min.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <h1 class="nav-title" style="font-size: 15px;">Dashboard</h1>
+
+        
+        <!-- Enlarged Search Bar -->
+        <div class="search-bar">
+            <input type="text" placeholder="Search...">
+            <button><i class="fas fa-search"></i></button>
+        </div>
+        <div class="nav-links">
+            <a href="#"><i class="fas fa-bell"></i> Notifications</a>
+            <a href="#"><i class="fas fa-envelope"></i> Messages</a>
+            <a href="#"><i class="fas fa-user"></i> Account</a>
+            <a href="#"><i class="fas fa-question"></i>Help</a>
+            <a href="#"><i class="fas fa-thumbs-up"></i>Feedback</a>
+        </div>
+
+        <!-- Language Selector -->
+        <div class="language-dropdown">
+            <button class="lang-btn"><i class="fas fa-globe"></i> Languages ▼</button>
+            
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <ul>
+            <li><a href="#"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="#"><i class="fas fa-user"></i> Profile</a></li>
+            <li><a href="#"><i class="fas fa-clock"></i> Recents</a></li>
+            <li><a href="#"><i class="fas fa-cog"></i> Settings</a></li>
+            <li><a href="#"><i class="fas fa-star"></i> Starred</a></li>
+            <li><a href="#"><i class="fas fa-cloud"></i> Backups</a></li>
+            <li><a href="{{ url_for('logout_route') }}"><i class="fas fa-sign-out-alt"></i>Logout</a></li>
+        </ul>
+    </div>
+
+
+        <div class="main-content">
+            <h1 class="dashboard-header">Welcome to Your Dashboard</h1>
+
+            <div class="cards">
+
+                <div class="grid-container">
+                    <a href="{{ url_for('list_files_route') }}" class="grid-item">📂 List Files</a>
+                    <a href="{{ url_for('rename_route') }}" class="grid-item">✏️ Rename File (Admin only)</a>
+                    <a href="{{ url_for('delete_route') }}" class="grid-item">🗑️ Delete File/Directory (Admin only)</a>
+                    <a href="{{ url_for('create_directory_route') }}" class="grid-item">📁 Create Directory</a>
+                
+                    <a href="{{ url_for('upload_route') }}" class="grid-item">☁️ Upload to S3</a>
+                    <a href="{{ url_for('search_route') }}" class="grid-item">🔍 Search Files</a>
+                    <a href="{{ url_for('compress_route') }}" class="grid-item">📦 Compress File</a>
+                    <a href="{{ url_for('encrypt_route') }}" class="grid-item">🔒 Encrypt File</a>
+                
+                    <a href="{{ url_for('decrypt_route') }}" class="grid-item">🔓 Decrypt File</a>
+                    <a href="{{ url_for('organize_route') }}" class="grid-item">🗂️ Organize Files Automatically</a>
+                    <a href="{{ url_for('schedule_route') }}" class="grid-item">📅 Schedule Auto-Organization</a>
+                    <a href="{{ url_for('version_control_route') }}" class="grid-item">📜 Version Control</a>
+                    <a href="{{ url_for('ai_route') }}" class="grid-item">🤖 AI-Powered Features</a>                </div>
+                
+    </div>
+</body>
+</html>

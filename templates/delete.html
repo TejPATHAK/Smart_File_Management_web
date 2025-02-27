@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete File or Directory</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="navbar">
+        <a href="{{ url_for('dashboard') }}"class="back-to-dashboard">Back to Dashboard</a>
+        <a href=""class="deletee">Delete Your File/ Directory Here!</a>
+    
+    </div>
+</div>
+    <div class="container">
+        <div class="welcome">
+        <h2>Delete File or Directory</h2>
+        </div>
+       
+        <form action="{{ url_for('delete_path') }}" method="POST">
+            <label for="directory">Enter Directory Path:</label>
+            <input type="text" id="directory" name="directory" required>
+            
+            <label for="name">Enter File or Directory Name:</label>
+            <input type="text" id="name" name="name" required>
+            
+            <button type="submit">Delete</button>
+        </form>
+        {% if message %}
+        <p class="message">{{ message }}</p>
+    {% endif %}
+     
+    </div>
+</body>
+</html>
+
+

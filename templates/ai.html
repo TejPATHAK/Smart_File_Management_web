@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Powered File Management</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="navbar">
+        <a href="{{ url_for('dashboard') }}"class="back-to-dashboard">Back to Dashboard</a>
+        <a href="{{ url_for('dashboard') }}"class="aii">AI Powered Feature Menu</a>
+    
+    </div>
+    <div class="container">
+        <h2>AI-Powered Feature</h2>
+        
+        <!-- OCR Feature -->
+        <h3>Extract Text from Image (OCR)</h3>
+        <form action="{{ url_for('extract_text') }}" method="post" enctype="multipart/form-data">
+            <label for="image_file">Upload Image:</label>
+            <input type="file" name="image_file" required>
+            <button type="submit">Extract Text</button>
+        </form>
+
+        <!-- NLP-Based Categorization -->
+        <h3>File Categorization Using AI</h3>
+        <form action="{{ url_for('categorize_file') }}" method="post" enctype="multipart/form-data">
+            <label for="file">Upload File:</label>
+            <input type="file" name="file" required>
+            <button type="submit">Categorize File</button>
+        </form>
+
+        <!-- AI-based Search -->
+        <h3>AI-Powered Search</h3>
+        <form action="{{ url_for('ai_search') }}" method="post">
+            <label for="search_query">Enter Search Query:</label>
+            <input type="text" name="search_query" required>
+            <button type="submit">Search</button>
+        </form>
+
+        <br>
+        
+    </div>
+</body>
+</html>

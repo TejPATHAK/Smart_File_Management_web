@@ -1,0 +1,8 @@
+Flask==2.2.5
+PyJWT==2.6.0
+cryptography==39.0.1
+boto3==1.26.60
+schedule==1.2.0
+pytesseract==0.3.10
+Pillow==9.5.0
+rapidfuzz==2.16.4

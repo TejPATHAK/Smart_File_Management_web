@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Version Control</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="navbar">
+        <a href="{{ url_for('dashboard') }}"class="back-to-dashboard">Back to Dashboard</a>
+        <a href="{{ url_for('dashboard') }}"class="versionn">Keep Track of Every Change!</a>
+    
+    </div>
+    <div class="container">
+        <h2>Version Control</h2>
+
+        <!-- Form to Select File for Version Control -->
+        <form action="{{ url_for('version_control') }}" method="POST">
+            <label for="file_path">Select File:</label>
+            <input type="text" id="file_path" name="file_path" placeholder="Enter file path" required>
+            <button type="submit">View Versions</button>
+        </form>
+
+        <!-- Display File Versions -->
+        {% if versions %}
+            <h3>Available Versions</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Version</th>
+                        <th>Timestamp</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for version in versions %}
+                        <tr>
+                            <td>{{ version.version_id }}</td>
+                            <td>{{ version.timestamp }}</td>
+                            <td>
+                                <a href="{{ url_for('restore_version', file_path=file_path, version_id=version.version_id) }}" class="btn">Restore</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        {% endif %}
+        
+        <br>
+       
+    </div>
+</body>
+</html>

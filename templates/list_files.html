@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>List Files</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="navbar">
+        <a href="{{ url_for('dashboard') }}"class="back-to-dashboard">Back to Dashboard</a>
+        <a href=""class="listt">Welcome To List Files Here!</a>
+    
+    </div>
+    
+</div>
+
+    
+    <div class="container">
+        <div class="welcome">
+            <h2> List Files</h2>
+        </div>
+        
+        <!-- Form to submit directory path -->
+         <form method="POST" action="{{ url_for('list_files_route') }}">
+            <label for="directory">Directory path:</label>
+            <input type="text" id="directory" name="directory" placeholder="Enter directory path" required>
+            <button type="submit">List Files</button>
+        </form>
+        <!-- Display files if any were returned -->
+         {% if files %}
+         <h3>Files in {{ directory }}:</h3>
+         <ul>
+            {% for file in files %}
+            <li>{{ file }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+</body>
+</html>
+
+

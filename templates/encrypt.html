@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encrypt File</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="navbar">
+        <a href="{{ url_for('dashboard') }}"class="back-to-dashboard">Back to Dashboard</a>
+        <a href="{{ url_for('dashboard') }}"class="encryptt">Encrypt your Files Here!</a>
+    
+    </div>
+    </div>
+    <div class="container">
+        <h2>Encrypt a File</h2>
+
+        <form action="{{ url_for('encrypt') }}" method="POST" enctype="multipart/form-data">
+            <label for="file">Select File to Encrypt:</label>
+            <input type="file" id="file" name="file" required>
+
+            <label for="password">Enter Encryption Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <button type="submit">Encrypt File</button>
+        </form>
+
+        {% if message %}
+            <p>{{ message }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Rename File</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="navbar">
+        <a href="{{ url_for('dashboard') }}"class="back-to-dashboard">Back to Dashboard</a>
+        <a href="{{ url_for('dashboard') }}"class="renameee">Welcome To Rename your Files Here!</a>
+    
+    </div>
+    
+</div>
+
+    <div class="container">
+        <div class="welcome">
+        <h2>Rename File</h2>
+        </div>
+        <form action="{{ url_for('rename_file') }}" method="POST">
+            <label for="directory">Enter Directory Path:</label>
+            <input type="text" id="directory" name="directory" required>
+
+            <label for="old_name">Enter Current File Name:</label>
+            <input type="text" id="old_name" name="old_name" required>
+
+            <label for="new_name">Enter New File Name:</label>
+            <input type="text" id="new_name" name="new_name" required>
+
+            <button type="submit">Rename File</button>
+        </form>
+
+        {% if message %}
+            <p>{{ message }}</p>
+        {% endif %}
+
+    </div>
+    </div>
+</body>
+</html>

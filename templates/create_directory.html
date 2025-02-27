@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Create Directory</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="navbar">
+        <a href="{{ url_for('dashboard') }}"class="back-to-dashboard">Back to Dashboard</a>
+        <a href="{{ url_for('dashboard') }}"class="createee">Create Directory Here!</a>
+    
+    </div>
+</div>
+    <div class="container">
+        <div class="welcome"></div>
+        <h2>Create Directory</h2>
+        </div>
+        <form action="{{ url_for('create_directory') }}" method="POST">
+            <div class="input-group">
+                <label for="directory">Enter Directory Path:</label>
+                <input type="text" id="directory" name="directory" required>
+            
+                <label for="folder_name">Enter New Folder Name:</label>
+                <input type="text" id="folder_name" name="folder_name" required>
+            </div>
+
+            <button type="submit" class="btn">Create Directory</button>
+        </form>
+
+        {% if message %}
+            <p>{{ message }}</p>
+        {% endif %}
+    </div>
+    </div>
+</body>
+</html>

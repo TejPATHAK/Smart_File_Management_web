@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organize Files</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="navbar">
+        <a href="{{ url_for('dashboard') }}">Back to Dashboard</a>
+       
+        <div class="nav-right">
+            <h1>Ready to Ogranize your files here!</h1>
+        </div>
+    </div>
+    </div>
+    
+    <div class="container">
+        <div class="welcome">
+            <h2>List Files</h2>
+        </div>
+    <div class="container">
+        <h2>Organize Files</h2>
+
+        <form action="{{ url_for('organize') }}" method="POST">
+            <label for="directory">Enter Directory Path:</label>
+            <input type="text" id="directory" name="directory" required placeholder="e.g., C:\Users\YourName\Documents">
+
+            <button type="submit">Organize</button>
+        </form>
+
+        {% if message %}
+            <p>{{ message }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>

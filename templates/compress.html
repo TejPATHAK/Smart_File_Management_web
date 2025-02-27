@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compress File or Directory</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>Compress File or Directory</h2>
+
+        {% if message %}
+            <p class="message">{{ message }}</p>
+        {% endif %}
+
+        <form action="{{ url_for('compress_path') }}" method="POST">
+            <label for="directory">Enter Directory Path:</label>
+            <input type="text" id="directory" name="directory" required>
+            
+            <label for="name">Enter File or Directory Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="zip_name">Enter ZIP File Name (without .zip extension):</label>
+            <input type="text" id="zip_name" name="zip_name" required>
+
+            <button type="submit">Compress</button>
+        </form>
+        
+        <a href="{{ url_for('dashboard') }}">Back to Dashboard</a>
+    </div>
+</body>
+</html>
