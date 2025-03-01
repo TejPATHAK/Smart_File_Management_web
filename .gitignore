@@ -1,2 +1,4 @@
-key.key
-file_management.log
+echo "key.key" >> .gitignore
+git rm --cached key.key
+git commit -m "Added key.key to .gitignore"
+git push origin master
