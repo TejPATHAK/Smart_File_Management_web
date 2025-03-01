@@ -15,11 +15,11 @@ from pymongo import MongoClient
 MONGO_URI = "mongodb://localhost:27017"
 DB_NAME = "file_management"
 
-# ✅ Initialize MongoDB Client BEFORE using collections
+# Initialize MongoDB Client BEFORE using collections
 client = MongoClient(MONGO_URI)
 db = client[DB_NAME]
 
-# ✅ Define collections BEFORE using them
+# Define collections BEFORE using them
 users_collection = db["users"]
 files_collection = db["files"]  # Fix: Ensure this is defined
 
