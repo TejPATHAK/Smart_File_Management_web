@@ -9,6 +9,39 @@ import pytesseract
 pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
 from PIL import Image
 import spacy
+from pymongo import MongoClient
+
+# MongoDB Configuration
+MONGO_URI = "mongodb://localhost:27017"
+DB_NAME = "file_management"
+
+# ✅ Initialize MongoDB Client BEFORE using collections
+client = MongoClient(MONGO_URI)
+db = client[DB_NAME]
+
+# ✅ Define collections BEFORE using them
+users_collection = db["users"]
+files_collection = db["files"]  # Fix: Ensure this is defined
+
+# Function to register users
+def register_user(username, password, role="user"):
+    if users_collection.find_one({"username": username}):
+        return False, "User already exists"
+    
+    users_collection.insert_one({
+        "username": username,
+        "password": password,  # Store securely using hashing in real applications
+        "role": role
+    })
+    return True, "User registered successfully"
+
+# ✅ Ensure admin exists before calling register_user
+if not users_collection.find_one({"username": "admin"}):
+    register_user("admin", "admin123", "admin")
+    print("✅ Admin user created in MongoDB")
+
+print("✅ MongoDB Connection Successful!")
+
 
 # --- Flask Setup ---
 app = Flask(__name__)
